@@ -1,7 +1,6 @@
 package bdd.stepdefs;
 
 import com.comit.model.User;
-import com.comit.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +11,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrint;
 
 //@SpringBootCucumberTest
 //@AutoConfigureMockMvc(print = MockMvcPrint.NONE)
