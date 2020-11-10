@@ -17,9 +17,13 @@ public class UserService {
 
     public User createUser(User model)
     {
-        User newUser = new User(model.getUserName(),model.getPassword(),
+        User newUser = new User(model.getUsername(),model.getPassword(),
                 model.getName(), model.getSurName());
         userRepository.save(newUser);
         return newUser;
+    }
+
+    public User getUserByUserName(String userName) {
+        return userRepository.findByUsername(userName);
     }
 }
