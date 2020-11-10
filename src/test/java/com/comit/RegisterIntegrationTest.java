@@ -32,7 +32,7 @@ public class RegisterIntegrationTest {
 
     @Test
     public void shouldPostMethodReturnOkAndCreateNewUser() throws Exception {
-        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh");
+        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh","USER");
 
         mockMvc.perform(post("/register")
                 .contentType("application/json")

@@ -34,7 +34,7 @@ public class LoginIntegrationTest {
     @Test
     public void shouldLoginProcessBeSuccessfull() throws Exception {
         LoginForm loginForm = new LoginForm("Zaphod","aphod@galaxy.net");
-        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh");
+        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh","USER");
         userRepository.save(user);
 
         mockMvc.perform(post("/login")

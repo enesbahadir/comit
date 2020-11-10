@@ -21,11 +21,22 @@ public class User {
 
     private String surName;
 
-    public User(String username, String password, String name, String surName) {
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public User(String username, String password, String name, String surName, String type) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.surName = surName;
+        this.type = type;
     }
 
     public int getId() {

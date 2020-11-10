@@ -28,7 +28,7 @@ public class RegisterStepDefs {
 
     @When("^the user fill register form, User object is posted$")
     public void theUserFillRegisterFormUserObjectIsPosted() throws Throwable {
-        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh");
+        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh","USER");
         action = mvc.perform(MockMvcRequestBuilders
                 .post("/register")
                 .content(asJsonString(user))

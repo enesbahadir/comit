@@ -39,7 +39,7 @@ public class LoginStepDefs {
     @Before
     public void addMockUserToUserRepository()
     {
-        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh");
+        User user = new User("Zaphod", "zaphod@galaxy.net","eheheh","eheheh","USER");
         if(userRepository.findByUsername("Zaphod") == null) userRepository.save(user);
     }
 
