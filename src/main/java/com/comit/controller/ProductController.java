@@ -57,4 +57,9 @@ public class ProductController {
         Page<Product> resultPage = productService.getPaginatedProducts(pageNumber);
         return resultPage.getContent();
     }
+
+    @GetMapping("products/search")
+    public List<Product> findAllSearchedProducts(@RequestParam("search") String keyword) {
+        return productService.getProdcuts(keyword);
+    }
 }
