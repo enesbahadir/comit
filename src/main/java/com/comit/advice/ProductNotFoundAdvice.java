@@ -1,6 +1,6 @@
 package com.comit.advice;
 
-import com.comit.execption.ProductNotFoundExecption;
+import com.comit.execption.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class ProductNotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler(ProductNotFoundExecption.class)
+    @ExceptionHandler(ProductNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String preschoolNotFoundHandler(ProductNotFoundExecption ex) {
+    String preschoolNotFoundHandler(ProductNotFoundException ex) {
         return ex.getMessage();
     }
 }
