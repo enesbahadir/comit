@@ -18,6 +18,8 @@ public class ProductController {
         this.productService = productService;
     }
 
+
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/products")
     public Product createUser(@RequestBody Product newProduct)
     {
@@ -27,6 +29,8 @@ public class ProductController {
                 linkTo(methodOn(RegisterController.class).listOfPreschools()).withRel("preschools"));*/
     }
 
+
+    //@CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/products/{id}")
     public Product updateProduct (@RequestBody Product newProduct, @PathVariable Integer id)
     {
@@ -35,17 +39,20 @@ public class ProductController {
     }
 
     @DeleteMapping("/products/{id}")
+    //@CrossOrigin(origins = "http://localhost:4200")
     void deleteProduct(@PathVariable Integer id) {
         productService.deleteProduct(id);
     }
 
     @GetMapping("products")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public List<Product> getProducts()
     {
         return productService.getProducts();
     }
 
     @GetMapping("/products/{id}")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public Product getProduct(@PathVariable Integer id)
     {
         return productService.getProductById(id);
@@ -53,12 +60,14 @@ public class ProductController {
 
     @GetMapping("products/page")
     @ResponseBody
+    //@CrossOrigin(origins = "http://localhost:4200")
     public List<Product> findAllPaginatedProducts(@RequestParam("pageNumber") int pageNumber) {
         Page<Product> resultPage = productService.getPaginatedProducts(pageNumber);
         return resultPage.getContent();
     }
 
     @GetMapping("products/search")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public List<Product> findAllSearchedProducts(@RequestParam("search") String keyword) {
         return productService.getProdcuts(keyword);
     }

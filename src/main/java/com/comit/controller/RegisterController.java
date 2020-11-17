@@ -3,6 +3,7 @@ package com.comit.controller;
 import com.comit.model.User;
 import com.comit.service.UserService;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

@@ -23,6 +23,7 @@ public class OrderController {
     }
 
     @PostMapping("/api/orders")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public Order createUser(@RequestBody OrderForm orderForm)
     {
         Order order = new Order();
@@ -46,17 +47,20 @@ public class OrderController {
     }
 
     @GetMapping("/api/orders")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public Iterable<Order> getOrders() {
         return orderService.getOrders();
     }
 
     @GetMapping("/api/orders/{id}")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public Order getOrder(@PathVariable Integer id )
     {
         return orderService.getOrderById(id);
     }
 
     @GetMapping("/api/orders/user/{id}")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public List<Order> getOrdersByUser(@PathVariable Integer id ){
         return orderService.getOrdersByUser(id);
     }
