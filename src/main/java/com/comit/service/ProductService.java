@@ -1,6 +1,6 @@
 package com.comit.service;
 
-import com.comit.execption.ProductNotFoundExecption;
+import com.comit.execption.ProductNotFoundException;
 import com.comit.model.Product;
 import com.comit.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,14 +63,14 @@ public class ProductService {
 
     public Product getProductById(int id) {
         return productRepository.findById(id).
-                orElseThrow( () -> new ProductNotFoundExecption(id));
+                orElseThrow( () -> new ProductNotFoundException(id));
     }
 
     public Page<Product> getPaginatedProducts(int pageNumber) {
         PageRequest pageable = PageRequest.of(pageNumber - 1, 10);
         Page<Product> resultPage = productRepository.findAll(pageable);
         if (pageNumber > resultPage.getTotalPages()) {
-            throw new ProductNotFoundExecption("Not Found Page Number:" + pageNumber);
+            throw new ProductNotFoundException("Not Found Page Number:" + pageNumber);
         }
         return resultPage;
     }

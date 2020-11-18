@@ -22,8 +22,8 @@ import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootCucumberTest
-@AutoConfigureMockMvc(print = MockMvcPrint.NONE)
+//@SpringBootCucumberTest
+//@AutoConfigureMockMvc(print = MockMvcPrint.NONE)
 public class ProductStepDefs {
 
     @Autowired
